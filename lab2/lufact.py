@@ -40,7 +40,7 @@ def lufact(A):
       i = range(j + 1, n) # indices for the "active" matrix portion
       A[i, j] = A[i, j] / A[j, j]
       A[j+1:n, j+1:n] = A[j+1:n, j+1:n] - np.outer(A[i, j], A[j, i])
-      print(A)
+      print(A) 
       #return # this exits the function on the first iteration
 
 # Extract L and U from the in-place form
