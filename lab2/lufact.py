@@ -28,17 +28,20 @@ def lufact(A):
    for j in range(n-1):
 
 # Find the index of the largest pivot element in the current column
+      p = j + np.argmax(np.abs(A[j:, j]))
 
 
 # Swap the rows within the in-place array as well as the permutation matrix P
+      A[[j, p], :] = A[[p, j], :]
+      P[[j, p], :] = P[[p, j], :]
 
 
 # Perform the in-place elimination and save the new column of L
       i = range(j + 1, n) # indices for the "active" matrix portion
       A[i, j] = A[i, j] / A[j, j]
       A[j+1:n, j+1:n] = A[j+1:n, j+1:n] - np.outer(A[i, j], A[j, i])
-#      print(A)
-#      return # this exits the function on the first iteration
+      print(A)
+      #return # this exits the function on the first iteration
 
 # Extract L and U from the in-place form
    U = np.triu(A)
