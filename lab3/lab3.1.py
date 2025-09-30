@@ -1,34 +1,38 @@
 import numpy as np
 
 n = 5
-h = 1/n
-main_diag = -1*np.ones(n)
-off_diag = np.ones(n - 1)
-Dx = np.diag(main_diag) + np.diag(off_diag, 1) #+ np.diag(off_diag, -1)
+h = 1 / n
+x = np.linspace(0, 1, n + 1)
+m = n + 1
 
-#x = np
+# Build Dx using diags only:
+# central stencil on off-diagonals, with boundary fixes in the first/last entries
+diag0 = np.zeros(m)
+diag0[0]  = -1/h       # forward diff at x0
+diag0[-1] =  1/h       # backward diff at xN
 
-Dx = np.zeros((n + 1, n + 1))
+super1 = np.ones(m - 1) / (2*h)
+super1[0] = 1/h        # forward diff coefficient
 
-# Forward difference at x_0
-Dx[0, 0] = -1 / h
-Dx[0, 1] = 1 / h
+sub1 = -np.ones(m - 1) / (2*h)
+sub1[-1] = -1/h        # backward diff coefficient
 
-# Central differences for interior points
-for i in range(1, n):
-    Dx[i, i - 1] = -1 / (2 * h)
-    Dx[i, i + 1] = 1 / (2 * h)
+Dx = np.diag(diag0) + np.diag(super1, 1) + np.diag(sub1, -1)
 
-# Backward difference at x_n
-Dx[n, n - 1] = -1 / h
-Dx[n, n] = 1 / h
+# Tests
+test_cases = [
+    ("f(x) = 1",  lambda x: np.ones_like(x), lambda x: np.zeros_like(x)),
+    ("f(x) = x",  lambda x: x,               lambda x: np.ones_like(x)),
+    ("f(x) = x^2",lambda x: x**2,            lambda x: 2*x),
+]
 
-f_1 = np.ones(n+1)
-f_x = np.array([i for i in range(n+1)])
-f_x2 = np.array([i**2 for i in range(n+1)])
-print(f_1)
-print(f_x)
-print(f_x2)
+for name, f, df in test_cases:
+    f_vec  = f(x)
+    approx = Dx @ f_vec
+    exact  = df(x)
+    error  = np.abs(approx - exact)
 
-f_prime = Dx @ f_x2
-print(f_prime)
+    print(f"\n{name}")
+    print("Approx: ", np.round(approx, 4))
+    print("Exact:  ", np.round(exact, 4))
+    print("Error:  ", np.round(error, 4))
