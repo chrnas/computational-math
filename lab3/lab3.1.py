@@ -19,15 +19,21 @@ sub1[-1] = -1/h        # backward diff coefficient
 
 Dx = np.diag(diag0) + np.diag(super1, 1) + np.diag(sub1, -1)
 
+Dx[0, 0:3] = np.array([-3, 4, -1]) / (2 * h)
+
+# Backward diff at xN: f'(xN) ≈ (3fN - 4fN-1 + fN-2)/(2h)
+Dx[-1, -3:] = np.array([1, -4, 3]) / (2 * h)
 # Tests
 test_cases = [
     ("f(x) = 1",  lambda x: np.ones_like(x), lambda x: np.zeros_like(x)),
     ("f(x) = x",  lambda x: x,               lambda x: np.ones_like(x)),
     ("f(x) = x^2",lambda x: x**2,            lambda x: 2*x),
+    ("f(x) = x^2",lambda x: np.e**(np.sin(4*x)), lambda x: 4*np.e**(np.sin(4*x))*np.cos(4*x))
 ]
 
 for name, f, df in test_cases:
     f_vec  = f(x)
+    print("f_vec ", f_vec)
     approx = Dx @ f_vec
     exact  = df(x)
     error  = np.abs(approx - exact)
