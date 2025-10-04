@@ -38,5 +38,4 @@ func1 = lambda x: 2*x**2
 func2 = lambda x: x**3 + 2*x - 3
 
 print(np.linalg.norm(func1(X[0])-L[0], ord=np.inf))
-
-print(np.linalg.norm(func1(X[1])-L[1], ord=np.inf))
+print(np.linalg.norm(func2(X[1])-L[1], ord=np.inf))
