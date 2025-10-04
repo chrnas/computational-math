@@ -1,5 +1,5 @@
 import numpy as np
-
+import matplotlib.pyplot as plt
 def Lagrange_interpolation(z, data_points):
 #
 #  Implementation to evaluate an interpolating polynomial p_n(x)
@@ -33,3 +33,26 @@ def Lagrange_interpolation(z, data_points):
       pnx += data_points[i][1]*temp
 
    return pnx
+
+
+def build_Interpolation(datapoints, M):
+    X = np.linspace(datapoints[0][0], datapoints[-1][0], M)
+    L = np.zeros((M,))
+    for k in range(M):
+        L[k] = Lagrange_interpolation(X[k], datapoints)
+    x_data = [p[0] for p in datapoints]
+    y_data = [p[1] for p in datapoints]
+
+    plt.figure(figsize=(8, 6)) # 
+    plt.plot(X, L, label='Lagrange Polynomial', color='blue') 
+    plt.scatter(x_data, y_data, color='red', zorder=5, label='Data Points') 
+
+    plt.title('Lagrange Interpolation')
+    plt.xlabel('x')
+    plt.ylabel('y')
+    plt.grid(True) 
+    plt.legend() 
+
+
+    plt.show()
+    return X,L
