@@ -22,8 +22,8 @@ plt.legend()
 
 plt.show()
 
-print("error:", abs(np.sqrt(np.pi)/2-Lagrange_interpolation(1.5, datapoints)))
-print("error:", abs(np.sqrt(np.pi)/2-Lagrange_interpolation(1.5, datapoints))/np.sqrt(np.pi)/2)
+print("absolute error:", abs(np.sqrt(np.pi)/2-Lagrange_interpolation(1.5, datapoints)))
+print("relative error:", abs(np.sqrt(np.pi)/2-Lagrange_interpolation(1.5, datapoints))/np.sqrt(np.pi)/2)
 
-print("error:", abs(120-Lagrange_interpolation(6, datapoints)))
-print("error:", abs(120-Lagrange_interpolation(6, datapoints))/120)
+print("absolute error:", abs(120-Lagrange_interpolation(6, datapoints)))
+print("relative error:", abs(120-Lagrange_interpolation(6, datapoints))/120)

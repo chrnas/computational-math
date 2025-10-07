@@ -43,7 +43,7 @@ def build_Interpolation(datapoints, M):
     x_data = [p[0] for p in datapoints]
     y_data = [p[1] for p in datapoints]
 
-    plt.figure(figsize=(8, 6)) # 
+    """plt.figure(figsize=(8, 6)) # 
     plt.plot(X, L, label='Lagrange Polynomial', color='blue') 
     plt.scatter(x_data, y_data, color='red', zorder=5, label='Data Points') 
 
@@ -54,5 +54,5 @@ def build_Interpolation(datapoints, M):
     plt.legend() 
 
 
-    plt.show()
+    plt.show()"""
     return X,L

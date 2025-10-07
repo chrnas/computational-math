@@ -1,5 +1,8 @@
+from scipy.interpolate import splrep, splev
 import numpy as np
 import matplotlib.pyplot as plt
+from joukowsky_airfoil_data import x_joukow, y_joukow
+from Lagrange_interpolation import build_Interpolation
 
 def disp_joukowsky_airfoil():
 #
@@ -17,16 +20,26 @@ def disp_joukowsky_airfoil():
    fig, ax = plt.subplots(figsize=(15, 4))
 
 # Plot the airfoil profile
-   ax.plot(-z.real, z.imag, '-k', linewidth=1.5)
-
+   #ax.plot(-z.real, z.imag, '-k', linewidth=1.5)
+   ax.plot(x_joukow, y_joukow, marker = 'o', linestyle= 'None', color = 'b', markerfacecolor='b', markersize=8)
+   datapoints = []
+   for i in range(len(x_joukow)):
+      datapoints.append((x_joukow[i],y_joukow[i]))
+   X, Air = build_Interpolation(datapoints, 150)
+   ax.plot(X, Air, '--r', linewidth=2)
 # Set limits and such
    ax.set_xlim([-2.0, 2.0])
    ax.set_ylim([-0.2, 0.9])
    ax.set_aspect('equal')
    ax.tick_params(labelsize=16)
 
+
 # Fill with light gray
    ax.fill(-z.real, z.imag, 'k', alpha=0.05, linewidth=0)
+   b_spline = splrep(x_joukow, y_joukow)
+   s = splev(X, b_spline)
+
+   ax.plot(X, s, '-.g', linewidth=2)
 
 # Return the figure environment for later use
    return fig, ax
@@ -36,3 +49,4 @@ def disp_joukowsky_airfoil():
 if __name__ == "__main__":
    disp_joukowsky_airfoil()
    plt.show()
+
