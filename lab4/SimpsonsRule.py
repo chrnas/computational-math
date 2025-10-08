@@ -41,7 +41,10 @@ def SimpsonsRule(a, b, f, n):
    In = 0.0
 
 #  Approximate the integral with composite Simpson's rule
-   for i in range(0, n, 2):
-      In = In + (h / 3) * (f(x[i]) + 4 * f(x[i + 1]) + f(x[i + 2]))
+   S = (h/3)*(f(a)+4*f((a+b)/2)+f(b))
+   In = (h/3)*f(x[0])
+   for i in range(1, n-1,2):
+      In = In + (h / 3) * (4*f(x[i]) + 2 * f(x[i + 1]))
+   In = In + (h/3)*(4*f(x[n-1])+f(x[n]))
 
    return In, x
