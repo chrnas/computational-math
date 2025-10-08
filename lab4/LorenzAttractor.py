@@ -62,8 +62,8 @@ def RHS(y):
 # evaluate the right hand side of the nonlinear ODE for the Lorenz
 # attractor
    dy    = np.zeros((3,))
-   dy[0] =
-   dy[1] =
-   dy[2] =
+   dy[0] = 10*(y[1]-y[0])
+   dy[1] = 28*y[0]-y[1]-y[1]*y[2]
+   dy[2] =y[0]*y[1]-(8/3)*y[2]
 
    return dy
