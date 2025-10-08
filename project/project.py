@@ -1,7 +1,5 @@
 import numpy as np
 
-import numpy as np
-
 def thomas_algorithm(A, d):
     """
     Solves A x = d for tridiagonal A using the Thomas algorithm.
@@ -59,13 +57,16 @@ def thomas_algorithm(A, d):
 if __name__ == "__main__":
     N = 5
     # create three random vectors
-    main = N * np.ones((N,)) + np.random.rand((N,))
-    sub = np.random.rand((N - 1,))
-    super = np.random.rand((N - 1,))
+    main = N * np.ones(N) + np.random.rand(N)
+    sub = np.random.rand(N - 1)
+    super = np.random.rand(N - 1)
     # use the ’np.diag’ command to create tridiagonal matrix
     A = np.diag(sub, k=-1) + np.diag(main, k=0) + np.diag(super, k=1)
 
-    known_x = np.pi * np.ones((N,)) # create known solution vector filled with pi
+    known_x = np.pi * np.ones(N) # create known solution vector filled with pi
     manuf_b = A @ known_x # manufacture the right-hand-side
 
     d = thomas_algorithm(A, manuf_b)
+
+    print("Computed solution:", d)
+    print("Known solution:", known_x)
