@@ -25,5 +25,5 @@ print("Error [0,1]:", error1)
 print("Error [-4,2]:", error2)
 
 
-f = lambda x: (x + 1)**2 * np.cos((2 * x + 1) / (x - 3.3))
-I_true = -1.564959809251273
+
+
