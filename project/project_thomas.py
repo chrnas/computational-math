@@ -1,5 +1,5 @@
 import numpy as np
-
+import time 
 def thomas(A, d):
     a = np.diag(A,-1)
     b = np.diag(A, 0)
@@ -37,8 +37,9 @@ A_test = np.array([[1,2,0],[1,2,3],[0,2,3]])
 d_test = np.array([1,1,1])
 
 A, d = test(7)
-print(d)
-print( A @ thomas(A,d))
+#print(d)
+#print( A @ thomas(A,d))
              
 
 
+#TO-DO plot and time thomas for different sizes of matrices. This way we can see if time grows O(n) or exponetially or whatever
