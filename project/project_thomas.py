@@ -1,5 +1,7 @@
 import numpy as np
 import time 
+import matplotlib.pyplot as plt
+
 def thomas(A, d):
     a = np.diag(A,-1)
     b = np.diag(A, 0)
@@ -36,10 +38,26 @@ def test(N):
 A_test = np.array([[1,2,0],[1,2,3],[0,2,3]])
 d_test = np.array([1,1,1])
 
-A, d = test(7)
+#A, d = test(7)
 #print(d)
 #print( A @ thomas(A,d))
-             
 
+# "warm up" run, otherwise we get a tail on the plot not representative on the time it takes to execute thomas            
+A, d = test(4)
+x = thomas(A,d)
 
-#TO-DO plot and time thomas for different sizes of matrices. This way we can see if time grows O(n) or exponetially or whatever
+times = []
+Ns =[5,10,15, 20,25,30, 35, 40]
+for i in Ns:
+    A, d = test(i)
+    t1 = time.time_ns()
+    x = thomas(A,d)
+    delta_t = (time.time_ns() - t1)/10**9 #convert to seconds
+    times.append(delta_t)
+print(times)
+plt.plot(Ns, times)
+plt.xlabel('N', fontsize=12)
+plt.ylabel('times', fontsize=12)
+plt.legend()
+plt.grid(True)
+plt.show()

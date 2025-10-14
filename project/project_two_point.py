@@ -2,37 +2,6 @@ import numpy as np
 from project_thomas import thomas
 import matplotlib.pyplot as plt
 
-def two_point(a,b, N):
-    h = (b-a)/N
-    y_min = lambda x : 1 - 2*h/x 
-    y_plus = lambda x : 1 + 2*h/x
-    s = lambda x : -h**2*( 8/(x**3) - 4/(x**4) + 2*np.log(x)/(x**2) - 6/(2*x**2))
-
-    y_exact_func = lambda x: 4 / x - 2 / x**2 + np.log(x) - 3 / 2
-    y = np.zeros(N)
-    A = np.zeros((N,N))
-    A[0][0] = -2
-    A[0][1] = y_plus(a)
-    
-    S = np.zeros(N)
-    y[0] = 1/2
-    S[0] = s(a) + y_min(a)*1/2 
-    index = 0
-    for i in range(1,N-1):
-        xi = a + i*h
-        A[i,i-1] = y_min(xi)
-        A[i,i] = -2
-        A[i,i+1] = y_plus(xi)
-        index +=1
-
-        S[i] = s(xi)
-        y[i] = y_exact_func(xi)
-    A[N-1][N-1] = -2
-    A[N-1][N-2] = y_min(b)
-    y[N-1] = np.log(2)
-    S[N-1] = s(b) + y_plus(b)*np.log(2) 
-    return A, S, y
-
 def two_point2(a,b, N):
     h = (b-a)/N
     below_diag = lambda x : 1/h**2 - 4/(2*x*h )
