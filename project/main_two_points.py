@@ -8,23 +8,27 @@ b = 2
 N = 20
 
 ratios=[]
+errors = []
 Ns = [5,10, 20,25, 30,35, 40, 50, 60, 70, 80]
 temp = None
 for i in Ns:
     A, rhs, y_exact = two_point2(a, b, i)
-    print(thomas(A,rhs))
-    print(y_exact)
     
     inf_norm = np.linalg.norm(thomas(A,rhs)-y_exact, ord=np.inf)
-    print("inf norm", inf_norm, i)
+    errors.append(float(inf_norm))
     if temp == None:
         ratios.append(None)
     else:
         error_ratio = temp/inf_norm
-        ratios.append(error_ratio)
-        print("ratio",error_ratio)
+        ratios.append(float(error_ratio))
     temp = inf_norm
 
+# Print results
+print("Ns:", np.array(Ns))
+print("Errors:", np.array(errors))
+print("Ratios:", np.array(ratios))
+
+# Plot error ratios
 plt.plot(Ns, ratios)
 plt.xlabel('N', fontsize=12)
 plt.ylabel('error ratio', fontsize=12)
