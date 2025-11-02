@@ -5,11 +5,10 @@ from two_point import two_point2
 
 a = 1
 b = 2
-N = 20
 
 ratios=[]
 errors = []
-Ns = [5,10, 20,25, 30,35, 40, 50, 60, 70, 80]
+Ns = [10, 20, 40, 80]
 temp = None
 for i in Ns:
     A, rhs, y_exact = two_point2(a, b, i)

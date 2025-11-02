@@ -1,5 +1,5 @@
 import numpy as np
-from project_thomas import thomas
+from thomas import thomas
 import matplotlib.pyplot as plt
 
 def two_point2(a,b, N):

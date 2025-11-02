@@ -18,7 +18,7 @@ xVals, iter = newtonRaphson(f, fprime, x0, tol)
 # Print number of iterations for newton raphson
 print(f"Number of iterations for Newton-Raphson: {iter}")
 
-# Print  newton raphson values
+# Print newton raphson values
 print("\nNewton Raphson X values")
 for k, x in enumerate(xVals):
     print(f'x{k+1}: {x:.4e}')

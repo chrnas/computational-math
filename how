@@ -1,0 +1,186 @@
+[33mcommit 1e925bfa50c154de4a3a7f79333f4619fb99da3f[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Christoffer Näs <chrna581@student.liu.se>
+Date:   Fri Oct 17 18:25:02 2025 +0200
+
+    Fix Runge-kutta error count
+
+[33mcommit b2ce36453d63fa4735df712fb362710c8505cbba[m
+Author: Christoffer Näs <chrna581@student.liu.se>
+Date:   Tue Oct 14 15:09:00 2025 +0200
+
+    modify result print for two points
+
+[33mcommit 28a02b19500bc85fc98f04145450418c596a1b74[m
+Author: Christoffer Näs <chrna581@student.liu.se>
+Date:   Tue Oct 14 14:57:47 2025 +0200
+
+    Split solution files
+
+[33mcommit 6761cf0c33161488d54a8b0e9245de3c2001c6f0[m
+Author: Astrid Pettersson <astpe354@student.liu.se>
+Date:   Tue Oct 14 10:07:33 2025 +0200
+
+    added plot for cpu timings
+
+[33mcommit 6b2ca8bc6020ed73b8ce13859cf8ccb78cb82cfd[m
+Author: Astrid Pettersson <astpe354@student.liu.se>
+Date:   Mon Oct 13 20:54:02 2025 +0200
+
+    dont know if correct but seems reasonable, will work on plotting cpu timings tomorrow
+
+[33mcommit 08387fa90ba432b2c1a276d2b80bbbe072b72da6[m
+Author: Astrid Pettersson <astpe354@student.liu.se>
+Date:   Mon Oct 13 11:04:38 2025 +0200
+
+    test
+
+[33mcommit 85995cd89f518b3b66739d45abb46f08cb6f237f[m
+Author: Astrid Pettersson <astpe354@student.liu.se>
+Date:   Mon Oct 13 00:00:57 2025 +0200
+
+    some bugs with part 2, will fix tomorrow
+
+[33mcommit 5e1d0bcd4f69dbaf80a235963222dfde0bfc1aa7[m
+Author: Astrid Pettersson <astpe354@student.liu.se>
+Date:   Sun Oct 12 13:48:32 2025 +0200
+
+    done with most of part 1 of project, starting part 2
+
+[33mcommit f1652ac17b2116778515d965101fe2c7c918cd39[m
+Author: Astrid Pettersson <astpe354@student.liu.se>
+Date:   Sun Oct 12 13:47:00 2025 +0200
+
+    done with most of part 1 of project, starting part 2
+
+[33mcommit 457e784d4127e1ed59e166f8f4b092d9757e1b86[m
+Author: Christoffer Näs <chrna581@student.liu.se>
+Date:   Wed Oct 8 17:15:20 2025 +0200
+
+    Implemented test for Thomas
+
+[33mcommit 7973ad7fcefdf0142e68d3fb6b71f9149e068e66[m
+Author: Christoffer Näs <chrna581@student.liu.se>
+Date:   Wed Oct 8 17:05:42 2025 +0200
+
+    Added thomas
+
+[33mcommit 0760dc8618250f2321949114c73b697dcb0efb5f[m
+Author: Christoffer Näs <chrna581@student.liu.se>
+Date:   Wed Oct 8 16:39:39 2025 +0200
+
+    Init project
+
+[33mcommit 09a38217d1561d813660351faf125691b0c0a42b[m
+Author: Astrid Pettersson <astpe354@student.liu.se>
+Date:   Wed Oct 8 16:35:17 2025 +0200
+
+    done with lab4
+
+[33mcommit 909c9e0988ed1689ab0a4ef3871e4fbac293f497[m
+Author: Astrid Pettersson <astpe354@student.liu.se>
+Date:   Wed Oct 8 13:49:52 2025 +0200
+
+    almost done with 4.4
+
+[33mcommit beee14291486e5cc51308f07ec940f0ee04bd1be[m
+Author: Astrid Pettersson <astpe354@student.liu.se>
+Date:   Wed Oct 8 12:37:16 2025 +0200
+
+    done with 4.3
+
+[33mcommit 09382dc4bf534fff7ae8e0a3d1cce88c81030e86[m
+Author: Astrid Pettersson <astpe354@student.liu.se>
+Date:   Wed Oct 8 11:53:19 2025 +0200
+
+    lab4_1 done
+
+[33mcommit f0dbcafb48bb7467b970b32396d227b879550e39[m
+Merge: a009d8e b2b286c
+Author: Astrid Pettersson <astpe354@student.liu.se>
+Date:   Tue Oct 7 11:52:24 2025 +0200
+
+    Merge branch 'main' of github.com:chrnas/computational-math
+
+[33mcommit a009d8e1a57d4bdb83ec4e2f5037a6c9c2b132bd[m
+Author: Astrid Pettersson <astpe354@student.liu.se>
+Date:   Tue Oct 7 11:51:58 2025 +0200
+
+    done with lab3
+
+[33mcommit b2b286c32327795f0cc0b951d364215db3a6ebdd[m
+Author: Christoffer Näs <chrna581@student.liu.se>
+Date:   Sun Oct 5 16:41:14 2025 +0200
+
+    Work on lab 4.1
+
+[33mcommit 7b23b7fad32813e4e956498a9f1c476076ce21f0[m
+Author: Astrid Pettersson <astpe354@student.liu.se>
+Date:   Sat Oct 4 14:21:31 2025 +0200
+
+    done with 3.3
+
+[33mcommit ef238b2eb6cb0749c6bd310127ecaf070a3d7b21[m
+Author: Astrid Pettersson <astpe354@student.liu.se>
+Date:   Sat Oct 4 13:44:53 2025 +0200
+
+    added some structural changes
+
+[33mcommit f02cd2532663740b345207d05100cdc2b3a30008[m
+Author: Astrid Pettersson <astpe354@student.liu.se>
+Date:   Sat Oct 4 13:27:06 2025 +0200
+
+    small fix
+
+[33mcommit b69550980253eaf0732edc06a6c655a9b43353a1[m
+Author: Astrid Pettersson <astpe354@student.liu.se>
+Date:   Sat Oct 4 13:25:50 2025 +0200
+
+    think im done with 3.2
+
+[33mcommit 05ac54c45acac4e7409faaf827e13c98473c496f[m
+Author: Astrid Pettersson <astpe354@student.liu.se>
+Date:   Sat Oct 4 11:10:37 2025 +0200
+
+    done with 3.1
+
+[33mcommit 89adbca2073fb3fdcfcdbea581e8285ef8709075[m
+Author: Astrid Pettersson <astpe354@student.liu.se>
+Date:   Tue Sep 30 11:48:16 2025 +0200
+
+    added 3.1d)
+
+[33mcommit 8015264ea36be684f7268e387cdf9939a323c95c[m
+Author: Astrid Pettersson <astpe354@student.liu.se>
+Date:   Tue Sep 30 11:17:23 2025 +0200
+
+    update
+
+[33mcommit bdc1d8e655a968b820d0173e9a77d2c78c423e7a[m
+Author: Astrid Pettersson <astpe354@student.liu.se>
+Date:   Tue Sep 30 10:47:32 2025 +0200
+
+    added lab 3.1
+
+[33mcommit 36b111dde44f486e437dc2bbab8f24d692a305a4[m
+Author: Christoffer Näs <chrna581@student.liu.se>
+Date:   Wed Sep 24 15:02:51 2025 +0200
+
+    Add lab3 skeleton
+
+[33mcommit a5117fe6df6fea76d31e7d78af36d913373c41d4[m
+Author: Astrid Pettersson <astpe354@student.liu.se>
+Date:   Wed Sep 24 14:41:18 2025 +0200
+
+    2.4
+
+[33mcommit eb61c528d69fe9bd71af5d4238b3a9cf777da693[m
+Author: Astrid Pettersson <astpe354@student.liu.se>
+Date:   Wed Sep 24 12:54:47 2025 +0200
+
+    added lufact
+
+[33mcommit f40cbbd78a1e442c90052480d5cd124ffa8e1a96[m
+Author: Christoffer Näs <chrna581@student.liu.se>
+Date:   Thu Sep 11 08:53:41 2025 +0200
+
+    Lab 1 completed and Lab 2 partialy completed
