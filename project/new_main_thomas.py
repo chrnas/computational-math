@@ -29,12 +29,12 @@ print("Relative error:", np.abs(known_x-x_thomas)/np.abs(known_x))
 
 # Plot execution times
 times = []
-Ns =[5,10,15, 20,25,30, 35, 40]
+Ns = np.arange(5, 300, 5)
 for i in Ns:
     A, d, known_x = test(i)
-    t1 = time.time_ns()
+    t1 = time.perf_counter()
     x = thomas(A,d)
-    delta_t = (time.time_ns() - t1)/10**9 #convert to seconds
+    delta_t = (time.perf_counter() - t1)
     times.append(delta_t)
 
 plt.plot(Ns, times)
